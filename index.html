@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Three.js Demo Cube</title>
+    <style>
+        body{
+            margin:0;
+        }
+        canvas{
+            width: 100%;
+            height: 100%;
+        }
+        .cPanel{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .form-group{
+            display:flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"> </script>
+    <script src="app.js"> </script>
+    <div class="cPanel">
+        <div class="form-group form-cam">
+            <h3>Camera Position</h3>
+            <label for="cam-x">X:</label>
+            <input type="range" name="cam-x" id="cam-x" step="0.01" min="-20" max="20" oninput="camX=this.value">
+            <label for="cam-y">Y:</label>
+            <input type="range" name="cam-y" id="cam-y" step="0.01" min="-20" max="20" oninput="camY=this.value">
+            <label for="cam-z">Z:</label>
+            <input type="range" name="cam-z" id="cam-z" step="0.01" min="-20" max="40" oninput="camZ=this.value">
+        </div>
+        <div class="form-group form-lt">
+            <h3>Light Position</h3>
+            <label for="lt-x">X:</label>
+            <input type="range" name="lt-x" id="lt-x" step="0.01" min="-20" max="20" oninput="ltX=this.value">
+            <label for="lt-y">Y:</label>
+            <input type="range" name="lt-y" id="lt-y" step="0.01" min="-20" max="20" oninput="ltY=this.value">
+            <label for="lt-z">Z:</label>
+            <input type="range" name="lt-z" id="lt-z" step="0.01" min="-20" max="20" oninput="ltZ=this.value">
+            <label for="lt-i">I:</label>
+            <input type="range" name="lt-i" id="lt-i" step="0.01" min="0" max="10" oninput="light.intensity=this.value">
+        
+        </div>
+        <div class="form-group form-rot">
+            <h3>Cube Rotation</h3>
+            <label for="rot-x">X:</label>
+            <input type="range" name="rot-x" id="rot-x" step="0.01" min="-5" max="5" oninput="mesh.rotation.x=this.value">
+            <label for="rot-y">Y:</label>
+            <input type="range" name="rot-y" id="rot-y" step="0.01" min="-5" max="5" oninput="mesh.rotation.y=this.value">
+            <label for="rot-z">Z:</label>
+            <input type="range" name="rot-z" id="rot-z" step="0.01" min="-5" max="5" oninput="mesh.rotation.z=this.value">
+        </div>
+    </div>
+</body>
+</html>
